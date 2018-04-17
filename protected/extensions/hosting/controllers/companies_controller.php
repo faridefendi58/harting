@@ -150,15 +150,21 @@ class CompaniesController extends BaseController
         $detail = $hcmodel->getDetail($args['id']);
 
         if (isset($_POST['HostingCompany'])){
+            $model->title = $_POST['HostingCompany']['title'];
+            $model->description = $_POST['HostingCompany']['description'];
+            $model->address = $_POST['HostingCompany']['address'];
+            $model->phone = $_POST['HostingCompany']['phone'];
+            $model->email = $_POST['HostingCompany']['email'];
             $model->status = $_POST['HostingCompany']['status'];
             $model->updated_at = date('Y-m-d H:i:s');
+            $model->updated_by = $this->_user->id;
             $update = \ExtensionsModel\HostingCompanyModel::model()->update($model);
             if ($update) {
                 $detail = $hcmodel->getDetail($model->id);
-                $message = 'Your post is successfully updated.';
+                $message = 'Data berhasil diubah';
                 $success = true;
             } else {
-                $message = 'Failed to update new post.';
+                $message = 'Gagal merubah data.';
                 $success = false;
             }
         }

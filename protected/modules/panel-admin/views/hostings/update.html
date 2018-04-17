@@ -80,7 +80,7 @@ Detail Layanan - {{ model.title }} - {{ App.params.site_name }}
 									{% include 'hostings/_form.html' with {'model':model, 'message':message} %}
 								</div>
 								<div id="paket-hosting" class="tab-pane fade">
-									{% include 'hostings/_package.html' with {'model':model} %}
+									{% include 'hostings/_package.html' with {'model':model, 'plans':plans} %}
 								</div>
 								<div id="fitur" class="tab-pane fade">
 									{% include 'hostings/_feature.html' with {'model':model} %}

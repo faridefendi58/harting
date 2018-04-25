@@ -8,6 +8,6 @@ index.php
 *.ehtml
 *.xhtml
 /protected/data/
-/themes/default/assets/images/*
+/themes/apart/assets/images/*
 /uploads/*
 *.lock

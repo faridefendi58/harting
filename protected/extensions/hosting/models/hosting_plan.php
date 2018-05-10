@@ -32,9 +32,10 @@ class HostingPlanModel extends \Model\BaseModel
      */
     public function getData($data = null)
     {
-        $sql = 'SELECT t.*, a.name AS admin_name  
+        $sql = 'SELECT t.*, a.name AS admin_name, c.title AS hosting_company_name   
             FROM {tablePrefix}ext_hosting_plan t 
             LEFT JOIN {tablePrefix}admin a ON a.id = t.created_by 
+            LEFT JOIN {tablePrefix}ext_hosting_company c ON c.id = t.hosting_company_id 
             WHERE 1';
 
         $params = [];
@@ -42,6 +43,11 @@ class HostingPlanModel extends \Model\BaseModel
             if (isset($data['hosting_company_id'])) {
                 $sql .= ' AND t.hosting_company_id =:hosting_company_id';
                 $params['hosting_company_id'] = $data['hosting_company_id'];
+            }
+
+            if (isset($data['hidden'])) {
+                $sql .= ' AND t.hidden =:hidden';
+                $params['hidden'] = $data['hidden'];
             }
         }
 

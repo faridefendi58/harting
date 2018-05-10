@@ -22,6 +22,7 @@ section.adv-search-section{overflow:visible}
 .no-top-padding{padding-top:0}
 .no-bottom-padding{padding-bottom:0}
 .no-padding{padding:0}
+.text-bold{font-weight:bold;}
 .section-top-shadow{-webkit-box-shadow:0 -10px 10px 0 rgba(0,0,0,.35);-moz-box-shadow:0 -10px 10px 0 rgba(0,0,0,.35);box-shadow:0 -10px 10px 0 rgba(0,0,0,.35);position:relative;z-index:100}
 .section-bottom-shadow{-webkit-box-shadow:0 10px 10px 0 rgba(0,0,0,.35);-moz-box-shadow:0 10px 10px 0 rgba(0,0,0,.35);box-shadow:0 10px 10px 0 rgba(0,0,0,.35);position:relative;z-index:100}
 .section-both-shadow,.slide-desc{-webkit-box-shadow:0 0 20px 0 rgba(0,0,0,.35);-moz-box-shadow:0 0 20px 0 rgba(0,0,0,.35)}

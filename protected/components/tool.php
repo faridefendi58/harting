@@ -51,4 +51,21 @@ class Tool
         }
 
     }
+
+    /**
+     * Initiated new class name from view
+     * ex : {% set hpmodel = App.tool.get_model('ExtensionsModel.HostingPlanModel') %}
+     * @param $path
+     * @return mixed
+     */
+    public function get_model($path)
+    {
+        if (strpos($path, '.') !== false) {
+            $class_name = "\\" . str_replace(".", "\\", $path);
+        } else {
+            $class_name = "\\" . $path;
+        }
+
+        return new $class_name();
+    }
 }

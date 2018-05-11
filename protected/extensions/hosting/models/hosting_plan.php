@@ -49,6 +49,11 @@ class HostingPlanModel extends \Model\BaseModel
                 $sql .= ' AND t.hidden =:hidden';
                 $params['hidden'] = $data['hidden'];
             }
+
+            if (isset($data['headline'])) {
+                $sql .= ' AND t.headline =:headline';
+                $params['headline'] = $data['headline'];
+            }
         }
 
         $sql .= ' ORDER BY t.created_at DESC';

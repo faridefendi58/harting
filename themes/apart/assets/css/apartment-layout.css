@@ -382,8 +382,8 @@ h4.grid-offer-title{text-transform:none;font-size:1.17em;line-height:1.43em;marg
 .grid-price-label{font-size:1.17em;width:40%}
 .grid-price{width:60%;height:42px;font-size:1.38em;text-align:right}
 .grid-area,.grid-baths,.grid-rooms{float:left;height:42px;font-size:1.08em;font-weight:700;line-height:42px}
-.grid-area{width:40%}
-.grid-baths,.grid-rooms{width:30%}
+.grid-area{width:50%}
+.grid-baths,.grid-rooms{width:50%}
 .grid-area img,.grid-baths img,.grid-rooms img{margin:0 10px 0 15px}
 .grid-offer-back .button{position:absolute;bottom:30px;width:100%;text-align:center}
 .grid-offer,.grid-offer-map{position:relative;width:100%}

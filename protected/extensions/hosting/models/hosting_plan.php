@@ -32,7 +32,8 @@ class HostingPlanModel extends \Model\BaseModel
      */
     public function getData($data = null)
     {
-        $sql = 'SELECT t.*, a.name AS admin_name, c.title AS hosting_company_name   
+        $sql = 'SELECT t.*, a.name AS admin_name, 
+            c.title AS hosting_company_name, c.website AS hosting_company_website   
             FROM {tablePrefix}ext_hosting_plan t 
             LEFT JOIN {tablePrefix}admin a ON a.id = t.created_by 
             LEFT JOIN {tablePrefix}ext_hosting_company c ON c.id = t.hosting_company_id 
@@ -57,6 +58,10 @@ class HostingPlanModel extends \Model\BaseModel
         }
 
         $sql .= ' ORDER BY t.created_at DESC';
+
+        if (isset($data['limit'])) {
+            $sql .= ' LIMIT '. $data['limit'];
+        }
 
         $sql = str_replace(['{tablePrefix}'], [$this->_tbl_prefix], $sql);
 

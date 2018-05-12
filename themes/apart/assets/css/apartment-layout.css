@@ -87,8 +87,8 @@ html.ie9 .slide-desc-col{opacity:1}
 .slide-desc-params{float:left;width:100%;padding-left:15px;padding-right:150px;overflow:hidden;white-space:nowrap}
 .slide-desc-price{position:absolute;width:150px;right:0;min-height:50px;font-size:1.54em;font-weight:700;line-height:50px}
 .slide-desc-area,.slide-desc-baths,.slide-desc-parking,.slide-desc-rooms{float:left;min-height:50px;font-size:1.08em;font-weight:700;line-height:50px}
-.slide-desc-area{width:31%}
-.slide-desc-baths,.slide-desc-parking,.slide-desc-rooms{width:23%}
+.slide-desc-area{width:40%}
+.slide-desc-baths,.slide-desc-parking,.slide-desc-rooms{width:40%}
 .slide-desc-params img{margin:0 15px}
 .slide-buttons{width:150px;height:50px;top:-2px;position:relative;z-index:10}
 html.ie9 .slide-buttons{width:50px}
@@ -1135,8 +1135,8 @@ h4.neighbourhood-title{text-transform:none;font-size:1.31em;margin-bottom:25px}
 	.estate-type,.transaction-type{font-size:.78em;padding:0 3px;line-height:16px;margin-top:2px}
 	.slide-desc-text{padding:15px 15px 11px;overflow:hidden}
 	.slide-desc-price{font-size:1em;line-height:30px;min-height:30px;width:100px}
-	.slide-desc-area{width:40%}
-	.slide-desc-baths,.slide-desc-parking,.slide-desc-rooms{width:20%}
+	.slide-desc-area{width:50%}
+	.slide-desc-baths,.slide-desc-parking,.slide-desc-rooms{width:50%}
 	.slide-desc-text p{padding-top:7px;font-size:1em;line-height:1.5em;overflow:hidden;max-height:100px}
 	.slide-desc-params{padding-left:10px;padding-right:100px}
 	.slide-desc-area,.slide-desc-baths,.slide-desc-parking,.slide-desc-rooms{font-size:1em;font-weight:700;line-height:30px;min-height:30px}

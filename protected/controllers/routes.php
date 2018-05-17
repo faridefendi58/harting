@@ -9,9 +9,9 @@ foreach(glob($settings['settings']['basePath'] . '/extensions/*/controllers/rout
     require_once $ext_routes;
 }
 
-$app->get('/niagahoster', function ($request, $response, $args) {
+/*$app->get('/niagahoster', function ($request, $response, $args) {
     return $response->withRedirect( 'https://goo.gl/V3dpJU' );
-});
+});*/
 
 $app->get('/[{name}]', function ($request, $response, $args) {
     

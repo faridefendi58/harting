@@ -76,15 +76,45 @@ class HostingPlanModel extends \Model\BaseModel
      */
     public function getDetail($id)
     {
-        $sql = 'SELECT t.*,  a.name AS created_by_name, ab.name AS updated_by_name 
+        $sql = 'SELECT t.*,  a.name AS created_by_name, ab.name AS updated_by_name,
+            c.title AS hosting_company_name, c.website AS hosting_company_website  
             FROM {tablePrefix}ext_hosting_plan t 
             LEFT JOIN {tablePrefix}admin a ON a.id = t.created_by 
             LEFT JOIN {tablePrefix}admin ab ON ab.id = t.updated_by 
+            LEFT JOIN {tablePrefix}ext_hosting_company c ON c.id = t.hosting_company_id
             WHERE t.id =:id';
 
         $sql = str_replace(['{tablePrefix}'], [$this->_tbl_prefix], $sql);
 
         $row = \Model\R::getRow( $sql, ['id'=>$id] );
+
+        return $row;
+    }
+
+    public function getQuery($data)
+    {
+        $sql = 'SELECT t.*,  a.name AS created_by_name, ab.name AS updated_by_name,
+            c.title AS hosting_company_name, c.website AS hosting_company_website 
+            FROM {tablePrefix}ext_hosting_plan t 
+            LEFT JOIN {tablePrefix}ext_hosting_company c ON c.id = t.hosting_company_id
+            LEFT JOIN {tablePrefix}admin a ON a.id = t.created_by 
+            LEFT JOIN {tablePrefix}admin ab ON ab.id = t.updated_by 
+            WHERE 1';
+
+        $params = [];
+        if (isset($data['hosting_company_id'])) {
+            $sql .= ' AND t.hosting_company_id =:hosting_company_id';
+            $params['hosting_company_id'] = $data['hosting_company_id'];
+        }
+
+        if (isset($data['title'])) {
+            $sql .= ' AND LOWER(t.title) =:title';
+            $params['title'] = $data['title'];
+        }
+
+        $sql = str_replace(['{tablePrefix}'], [$this->_tbl_prefix], $sql);
+
+        $row = \Model\R::getRow( $sql, $params );
 
         return $row;
     }

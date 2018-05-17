@@ -64,6 +64,19 @@ $app->group('/hosting', function () use ($user) {
     $this->group('/companies', function() use ($user) {
         new Extensions\Controllers\CompaniesController($this, $user);
     });
+
+    $this->group('/niagahoster', function() use ($user) {
+        new Extensions\Controllers\NiagahosterController($this, $user);
+    });
+    $this->group('/rumahweb', function() use ($user) {
+        new Extensions\Controllers\RumahwebController($this, $user);
+    });
+    $this->group('/idwebhost', function() use ($user) {
+        new Extensions\Controllers\IdwebhostController($this, $user);
+    });
+    $this->group('/domainesia', function() use ($user) {
+        new Extensions\Controllers\DomainesiaController($this, $user);
+    });
 });
 
 ?>

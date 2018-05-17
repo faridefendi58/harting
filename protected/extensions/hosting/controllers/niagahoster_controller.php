@@ -15,7 +15,13 @@ class NiagahosterController extends BaseController
 
     public function register($app)
     {
+        $app->map(['GET'], '/index', [$this, 'get_index']);
         $app->map(['GET'], '/[{package}]', [$this, 'get_paket']);
+    }
+
+    public function get_index($request, $response, $args)
+    {
+
     }
 
     public function get_paket($request, $response, $args)

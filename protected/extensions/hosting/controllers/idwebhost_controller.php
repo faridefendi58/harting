@@ -15,7 +15,25 @@ class IdwebhostController extends BaseController
 
     public function register($app)
     {
+        $app->map(['GET'], '/home', [$this, 'get_index']);
         $app->map(['GET'], '/[{package}]', [$this, 'get_paket']);
+    }
+
+    public function get_index($request, $response, $args)
+    {
+        $model = new \ExtensionsModel\HostingCompanyModel();
+        $data = $model->getDetail(self::COMPANY_ID);
+
+        $params = [
+            'hosting_company_id' => self::COMPANY_ID
+        ];
+        $c_model = new \ExtensionsModel\HostingPlanModel();
+        $packages = $c_model->getData($params);
+
+        return $this->_container->view->render($response, 'hosting_home.phtml', [
+            'data' => $data,
+            'packages' => $packages
+        ]);
     }
 
     public function get_paket($request, $response, $args)

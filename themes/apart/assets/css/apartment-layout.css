@@ -340,8 +340,8 @@ h4.list-offer-title{text-transform:none;font-size:1.38em;line-height:1.43em;marg
 .list-price-label{font-size:1.17em;width:40%}
 .list-price{height:42px;font-size:1.38em;text-align:right;position:absolute;bottom:-1px;right:-1px}
 .list-area,.list-baths,.list-rooms{float:left;height:42px;font-size:1.08em;font-weight:700;line-height:42px}
-.list-area{width:40%}
-.list-baths,.list-rooms{width:30%}
+.list-area{width:50%}
+.list-baths,.list-rooms{width:50%}
 .list-area img,.list-baths img,.list-rooms img{margin:0 10px 0 15px}
 .list-offer-col{-moz-perspective:2000px;perspective:2000px;-ms-transform:perspective(2000px);-moz-transform:perspective(2000px);-ms-transform-style:preserve-3d;transform-style:preserve-3d}
 .list-offer-map{width:262px;height:100%;position:relative;margin-top:-20px}
